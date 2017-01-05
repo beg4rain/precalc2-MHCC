@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+## ********************************************************************* ##
+## Copyright 2016                                                        ##
+## Jack Green, Nick Chura                                                ##
+##                                                                       ##
+## This file is part of the Mount Hood Community College                 ##
+## Precalculus Project                                                   ##
+##                                                                       ##
+## ********************************************************************* ##
+-->
+
+<chapter xml:id="activity-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Transformations Activity</title>
+  <section>
+    <title>Review Material</title>
+    <p>In this activity, you will review some basics from previous courses:
+      <ul>
+        <li><p>Vertical and Horizontal Translations</p></li>
+        <li><p>Vertical Stretches and Compressions</p></li>
+      </ul>
+    </p>
+    <p>In this first exercise, you will encounter your first of many <em>WeBWorK</em> problems. Click to open the <em>WeBWorK</em> environment, and you will see a graph which can be manipulated. Answer the questions that follow, and click to submit your responses.</p>
+    <exercise>
+      <webwork>
+        <setup>
+          <var name="$up">
+            <set>
+              <member>\text{?}</member>
+              <member correct="yes">\text{It went up by 5 units.}</member>
+              <member>\text{It went down by 5 units.}</member>
+            </set>
+          </var>
+          <var name="$down">
+            <set>
+              <member>\text{?}</member>
+              <member>\text{It went up by 3 units.}</member>
+              <member correct="yes">\text{It went down by 3 units.}</member>
+            </set>
+          </var>
+          <pg-code>
+            $up=PopUp(
+            ["?","It went up by 5 units.","It went down by 5 units."],"It went up by 5 units."
+            );
+            $down=PopUp(
+            ["?","It went up by 3 units.","It went down by 3 units."],"It went down by 3 units."
+            );
+          </pg-code>
+        </setup>
+        <statement>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/pXUT7wZS/width/431/height/313/border/888888" width="431px" height="313px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>The graph above shows the function <me>y = f(x) + k = x^2 + k</me> where <m>k</m> is a constant number.</p>
+          <p>You can use the slider to change the value of <m>k</m>, and observe how the graph changes.</p>
+          <p><ol label="a">
+            <li><p>Change <m>k</m> so the function is <m>y = x^2 + 5</m>.</p>
+            <p>How did this change the original graph?</p>
+            <p>Answer: <var name="$up" form="popup" /></p></li>
+            <li><p>Change <m>k</m> so the function is <m>y = x^2 - 3</m>.</p>
+            <p>How did this change the original graph?</p>
+            <p>Answer: <var name="$down" form="popup" /></p></li>
+          </ol></p>
+        </statement>
+      </webwork>
+    </exercise>
+    <p>Next, recall how a graph changes when we either <em>add</em> or <em>subtract</em> from the <em>input</em> of the function.</p>
+    <exercise>
+      <webwork>
+        <setup>
+          <var name="$left4">
+            <set>
+              <member>\text{?}</member>
+              <member>\text{right 4 units}</member>
+              <member correct="yes">\text{left 4 units}</member>
+            </set>
+          </var>
+          <var name="$right5down4">
+            <set>
+              <member>\text{?}</member>
+              <member correct="yes">\text{right 5, and down 4}</member>
+              <member>\text{right 5, and up 4}</member>
+              <member>\text{left 5, and down 4}</member>
+              <member>\text{left 5, and up 4}</member>
+            </set>
+          </var>
+          <pg-code>
+            $left4=PopUp(
+            ["?","right 4 units","left 4 units"],"left 4 units"
+            );
+            $right5down4=PopUp(
+            ["?","right 5, and down 4","right 5, and up 4","left 5, and down 4","left 5, and up 4"],"right 5, and down 4"
+            );
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The graph below shows the function <me>y = f(x + h) + k = (x + h)^2 + k</me> where <m>h</m> and <m>k</m> are constant numbers.</p>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/qHkxbUVg/width/430/height/272/border/888888/sri/true" width="430px" height="272px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>You can use the sliders to change the values of <m>h</m> and <m>k</m>, and observe how the graph changes.</p>
+          <p><ol label="a">
+            <li><p>Change <m>h</m> so the function is <m>y = (x + 4)^2</m>.</p>
+            <p>How did this change the original graph?</p>
+            <p>Answer: The graph of <m>y = x^2</m> moved <var name="$left4" form="popup" /></p></li>
+            <li><p>Change <m>h</m> and <m>k</m> so the function is <m>y = (x - 5)^2 - 4</m>.</p>
+            <p>How did this change the original graph?</p>
+            <p>Answer: The graph of <m>y = x^2</m> moved <var name="$right5down4" form="popup" /></p></li>
+          </ol></p>
+        </statement>
+      </webwork>
+    </exercise>
+    <p>Finally, explore the effects of multiplying the <em>output</em> of a function by a constant number.</p>
+    <exercise>
+      <webwork>
+        <setup>
+
+          <pg-code>
+
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The graph below shows a function <m>y = af(x)</m>, where <m>a</m> is a constant number.</p>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/aSr3RBYV/width/432/height/438/border/888888/sri/true" width="432px" height="438px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>Use the slider to change the value of the constant <m>a</m>, and observe changes to the graph.</p>
+          <p>Notice that <m>a</m> is being multiplied to the <em>output</em> of the function <m>f</m>.</p>
+          <p><ol label="a">
+            <li><p>Change <m>a</m> to a number greater than <m>1</m>. What happened to the graph?</p>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" form="popup" /> away from the <m>x</m><ndash /> axis.</p></li>
+            <li><p>Change <m>a</m> to a number between <m>0</m> and <m>1</m>. What happened to the graph?</p>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$compressed" form="popup" /> toward the <m>x</m><ndash /> axis.</p></li>
+          </ol></p>
+          <p>Next, the graph of a different function <m>y = af(x)</m> is shown.</p>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/b2KYhMZS/width/433/height/518/border/888888/sri/true" width="433px" height="518px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>This time, you can change <m>a</m> to positive or negative values.</p>
+          <p><ol label="c">
+            <li><p>Change <m>a</m> to the value <m>-2</m>. What happened to the graph?</p>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" /> by a factor of <m>2</m>, and it was reflected over the <var name="$xaxis" form="popup" />.</p></li>
+          </ol></p>
+
+        </statement>
+        <hint>
+
+        </hint>
+        <solution>
+
+        </solution>
+      </webwork>
+    </exercise>
+
+
+
+
+    <p>Questions you should be able to answer:
+      <ol>
+        <li><p>In general, how does the graph change when you <em>add</em> a number to the <em>output</em> of a function?</p></li>
+        <li><p>In general, how does the graph change when you <em>subtract</em> a number from the <em>output</em> of a function?</p></li>
+      </ol></p>
+
+  </section>
+
+</chapter>
