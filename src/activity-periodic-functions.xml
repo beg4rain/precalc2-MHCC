@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+## ********************************************************************* ##
+## Copyright 2016                                                        ##
+## Jack Green, Nick Chura                                                ##
+##                                                                       ##
+## This file is part of the Mount Hood Community College                 ##
+## Precalculus Project                                                   ##
+##                                                                       ##
+## ********************************************************************* ##
+-->
+
+<chapter xml:id="activity-periodic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Periodic Functions Activity</title>
+
+    <exercise>
+      <webwork>
+        <setup>
+
+          <pg-code>
+
+          </pg-code>
+        </setup>
+        <statement>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CKBXG9gF/width/425/height/429/border/888888" width="425px" height="429px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>The graph shows a Ferris wheel, together with the height of a passenger as a function of time.</p>
+          <p><ol label="a">
+            <li><p>To start, the Ferris wheel has a radius of <m>10</m> feet, passengers board it from the ground (a height of <m>0</m> feet), and it takes <m>10</m> minutes to complete a rotation.</p>
+              <p>Use the bottom slider to increase the time, and two things will happen:
+              <ul>
+                <li><p>The passenger (shown by a red triangle) will move around the Ferris Wheel.</p></li>
+                <li><p>the passenger's height will be graphed as a function of time.</p></li>
+              </ul>
+            </p></li>
+            <li><p>Next, use the slider to change the radius to <m>30</m> feet. Move the time slider and notice the change made to the graph.</p></li>
+            <li><p>Next, use the slider to move the height of the boarding platform. Move the time slider and notice the change made to the graph.</p></li>
+            <li><p>Finally, use the slider to change the period of the Ferris Wheel so it completes a revolution every 20 seconds. Move the time slider and notice the change made to the graph.</p></li>
+          </ol></p>
+        </statement>
+        <hint>
+
+        </hint>
+        <solution>
+
+        </solution>
+      </webwork>
+    </exercise>
+
+</chapter>

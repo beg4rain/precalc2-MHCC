@@ -111,9 +111,38 @@
     <exercise>
       <webwork>
         <setup>
-
+          <var name="$stretched">
+            <set>
+              <member>\text{?}</member>
+              <member correct="yes">\text{stretched}</member>
+              <member>\text{compressed}</member>
+            </set>
+          </var>
+          <var name="$compressed">
+            <set>
+              <member>\text{?}</member>
+              <member>\text{stretched away from}</member>
+              <member correct="yes">\text{compressed toward}</member>
+            </set>
+          </var>
+          <var name="$xaxis">
+            <set>
+              <member>\text{?}</member>
+              <member correct="yes">\text{x-axis}</member>
+              <member>\text{y-axis}</member>
+              <member>\text{line }y = x</member>
+            </set>
+          </var>
           <pg-code>
-
+            $stretched=PopUp(
+            ["?","stretched away from","compressed toward"],"stretched away from"
+            );
+            $compressed=PopUp(
+            ["?","stretched away from","compressed toward"],"compressed toward"
+            );
+            $xaxis=PopUp(
+            ["?","x-axis","y-axis","line y = x"],"x-axis"
+            );
           </pg-code>
         </setup>
         <statement>
@@ -123,16 +152,16 @@
           <p>Notice that <m>a</m> is being multiplied to the <em>output</em> of the function <m>f</m>.</p>
           <p><ol label="a">
             <li><p>Change <m>a</m> to a number greater than <m>1</m>. What happened to the graph?</p>
-            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" form="popup" /> away from the <m>x</m><ndash /> axis.</p></li>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" form="popup" /> the <m>x</m><ndash /> axis.</p></li>
             <li><p>Change <m>a</m> to a number between <m>0</m> and <m>1</m>. What happened to the graph?</p>
-            <p>Answer: The graph of <m>f</m> was vertically <var name="$compressed" form="popup" /> toward the <m>x</m><ndash /> axis.</p></li>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$compressed" form="popup" /> <m>x</m><ndash /> axis.</p></li>
           </ol></p>
           <p>Next, the graph of a different function <m>y = af(x)</m> is shown.</p>
           <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/b2KYhMZS/width/433/height/518/border/888888/sri/true" width="433px" height="518px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
           <p>This time, you can change <m>a</m> to positive or negative values.</p>
-          <p><ol label="c">
+          <p><ol label="a">
             <li><p>Change <m>a</m> to the value <m>-2</m>. What happened to the graph?</p>
-            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" /> by a factor of <m>2</m>, and it was reflected over the <var name="$xaxis" form="popup" />.</p></li>
+            <p>Answer: The graph of <m>f</m> was vertically <var name="$stretched" form="popup" /> by a factor of <m>2</m>, and it was reflected over the <var name="$xaxis" form="popup" />.</p></li>
           </ol></p>
 
         </statement>

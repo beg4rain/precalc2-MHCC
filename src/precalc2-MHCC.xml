@@ -27,6 +27,7 @@
         <xi:include href="./frontmatter.xml" />                <!-- Title Page, Preface, etc. -->
 
         <xi:include href="activity-transformations.xml" />
+        <xi:include href="activity-periodic-functions.xml" />
 
         <!--<xi:include href="./backmatter.xml" />-->
     </book>
