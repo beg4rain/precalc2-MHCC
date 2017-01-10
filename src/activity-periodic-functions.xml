@@ -12,7 +12,7 @@
 -->
 
 <chapter xml:id="activity-periodic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Periodic Functions Activity</title>
+  <title>Periodic Functions</title>
 
     <exercise>
       <webwork>
@@ -46,5 +46,6 @@
         </solution>
       </webwork>
     </exercise>
+
 
 </chapter>

@@ -12,7 +12,7 @@
 -->
 
 <chapter xml:id="activity-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Transformations Activity</title>
+  <title>Transformations</title>
   <section>
     <title>Review Material</title>
     <p>In this activity, you will review some basics from previous courses:
@@ -173,16 +173,174 @@
         </solution>
       </webwork>
     </exercise>
-
-
-
-
     <p>Questions you should be able to answer:
       <ol>
         <li><p>In general, how does the graph change when you <em>add</em> a number to the <em>output</em> of a function?</p></li>
         <li><p>In general, how does the graph change when you <em>subtract</em> a number from the <em>output</em> of a function?</p></li>
-      </ol></p>
+      </ol>
+    </p>
+    <p>Practice using these ideas in the next two exercises.</p>
+    <exercise>
+      <webwork>
+        <setup>
+          <var name="$grans1">
+            <static>(x-3)^2 + 4</static>
+          </var>
+          <var name="$grans2">
+            <static>(x-1)^2 + 3</static>
+          </var>
+          <pg-code>
+            $gr=init_graph(-3,-3,3,3,
+            axes=>[0,0],
+            grid=>[6,6],
+            size=>[400,400]
+            );
+            add_functions($gr, "x**2 for x in &lt;-3,3&gt; using color:red and weight:2");
+            @shift=map{$_+1}NchooseK(4,4);
+            $gr1=init_graph(-1,-1,6,6,
+            axes=>[0,0],
+            grid=>[7,7],
+            size=>[400,400]
+            );
+            add_functions($gr1, "(x-$shift[0])**2+$shift[1] for x in &lt;-1,6&gt; using color:blue and weight:2");
+            $gr2=init_graph(-1,-1,6,6,
+            axes=>[0,0],
+            grid=>[7,7],
+            size=>[400,400]
+            );
+            add_functions($gr2, "(x-$shift[2])**2+$shift[3] for x in &lt;-1,6&gt; using color:blue and weight:2");
+            $grans1=Compute("(x-$shift[0])**2+$shift[1]");
+            $grans2=Compute("(x-$shift[2])**2+$shift[3]");
+          </pg-code>
+        </setup>
+        <statement>
+          <figure>
+            <image pg-name="$gr" />
+          </figure>
+          <p>The graph above shows <m>f(x) = x^2</m>.</p>
+          <p>The next two graphs below are transformations of <m>f</m>. Determine how <m>f</m> was transformed, and write the formula for each graph.</p>
+          <figure>
+            <image pg-name="$gr1" />
+          </figure>
+          <p>The formula is:  <m>y = </m><var name="$grans1" width="15" /></p>
+          <figure>
+            <image pg-name="$gr2" />
+          </figure>
+          <p>The formula is:  <m>y = </m><var name="$grans2" width="15" /></p>
+        </statement>
+        <hint>
+          <p>Remember that the inside change involves a horizontal shift, and an outside change involves a vertical shift.</p>
+        </hint>
+        <solution>
+          <p><ol>
+            <li><p>The first graph is: <me>y = <var name="$grans1" /></me></p></li>
+            <li><p>The second graph is: <me>y = <var name="$grans2" /></me></p></li>
+          </ol></p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork>
+        <setup>
 
+          <pg-code>
+            @shift=map{$_+1}NchooseK(2,2);
+            for my $i(0..4){$gr[$i] = init_graph(-5,-5,5,5,axes=>[0,0],grid=>[10,10],size=>[200,200]);};
+            foreach my $j(1..4){$gr[$j] -> lb(new Label ( -3.75,3.2,$j,'red','left','bottom'));};
+            foreach my $k(1..4){$gr[$k] -> lb(new Label ( -4.5,4,'Graph','red','left','bottom'));};
+            add_functions($gr[0], "x*(x-1)*(x-2)+1 for x in &lt;-5,5> using color:red and weight:2");
+            add_functions($gr[1], "(x-$shift[0])*(x-$shift[0]-1)*(x-$shift[0]-2)+1-$shift[1] for x in &lt;-5,5> using color:blue and weight:2");
+            add_functions($gr[2], "(x-$shift[0])*(x-$shift[0]-1)*(x-$shift[0]-2)+1+$shift[1] for x in &lt;-5,5> using color:blue and weight:2");
+            add_functions($gr[3], "(x+$shift[0])*(x+$shift[0]-1)*(x+$shift[0]-2)+1+$shift[1] for x in &lt;-5,5> using color:blue and weight:2");
+            add_functions($gr[4], "(x+$shift[0])*(x+$shift[0]-1)*(x+$shift[0]-2)+1-$shift[1] for x in &lt;-5,5> using color:blue and weight:2");
+            $ans=PopUp(
+            ["?","Graph 1","Graph 2","Graph 3","Graph 4"],"?"
+            );
+          </pg-code>
+        </setup>
+        <statement>
+          <p>The function <m>y = f(x)</m> is shown below.</p>
+          <figure><image pg-name="$gr[0]" width="200" height="200" tex_size="200"/></figure>
+          <p>Which of the following graphs shows <m>y = f(x + </m><var name="$shift[0]" /><m>) + </m><var name="$shift[1]" />?</p>
+          <figure><image pg-name="$gr[1]" width="200" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[2]" width="200" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[3]" width="200" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[4]" width="200" height="200" tex_size="200"/></figure>
+          <p>Answer:  <var name="$ans" form="popup" /></p>
+        </statement>
+        <hint>
+
+        </hint>
+        <solution>
+
+        </solution>
+      </webwork>
+    </exercise>
   </section>
 
 </chapter>
+
+<!--
+<exercise>
+            <title>Solve using a graph</title>
+
+            <webwork>
+
+                <setup>
+                    <var name="$answer" category="number">
+                        <static>3</static>
+                    </var>
+                    <var name="$second_x" category="number">
+                        <static>3.8</static>
+                    </var>
+
+                    <pg-code>
+                        $answer = random(1,3,1);
+                        $gr = init_graph(-1,-1,4,4,
+                        axes=>[0,0],
+                        grid=>[5,5],
+                        size=>[400,400]
+                        );
+                        add_functions($gr, "x^3/$answer^3 for x in &lt;-1,4&gt; using color:blue and weight:2");
+                        $second_x = Real($answer*2**(1/3));
+
+                        $solgr = init_graph(-1,-1,4,4,
+                        axes=>[0,0],
+                        grid=>[5,5],
+                        size=>[400,400]
+                        );
+                        add_functions($solgr, "x^3/$answer^3 for x in &lt;-1,4&gt; using color:blue and weight:2");
+                        $solgr->moveTo(0,1);
+                        $solgr->lineTo($answer,1,'black',3);
+                        $solgr->arrowTo($answer,0,'black',3);
+
+                    </pg-code>
+                </setup>
+
+                <statement>
+                    <p>The graph below is a graph of <m>y=f(x)</m>. Use the graph to solve the equation <m>f(x)=1</m>.</p>
+
+                    <figure>
+                        <image pg-name="$gr">
+                            <description>a plot of a curve on a cartesian set of axes; the x axis ranges from -1 to 4, and the y-axis ranges from -1 to 4; the curve enters from the left, below the x-axis, and curves upward and to the right until it reaches the point (0,0); from here it continues predominantly rightward for a bit, bending slightly upward more and more as it progresses; it passes through the points (<var name="$answer"/>,1) and (<var name="$second_x"/>,2) before leaving the graph moving more and more upward and to the right.</description>
+                        </image>
+                    </figure>
+
+                    <p><m>x=</m> <var name="$answer" width="5"/></p>
+                </statement>
+
+                <solution>
+
+                    <p>The graph reveals that the only solution to <m>f(x)=1</m> is <m>x=<var name="$answer"/></m>.</p>
+
+                    <figure>
+                        <image pg-name="$solgr">
+                            <description>a plot of a curve on a cartesian set of axes; the x axis ranges from -1 to 4, and the y-axis ranges from -1 to 4; the curve enters from the left, below the x-axis, and curves upward and to the right until it reaches the point (0,0); from here it continues predominantly rightward for a bit, bending slightly upward more and more as it progresses; it passes through the points ($answer,1) and ($second_x,2) before leaving the graph moving more and more upward and to the right; a horizontal line segment moves rightward from y=1 on the y-axis until it reaches a point on the curve; a vertical line segment moves down from this point to x=$answer on the x-axis.</description>
+                        </image>
+                    </figure>
+
+                </solution>
+
+            </webwork>
+        </exercise>
+-->
