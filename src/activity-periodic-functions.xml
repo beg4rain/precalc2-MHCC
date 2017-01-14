@@ -13,39 +13,134 @@
 
 <chapter xml:id="activity-periodic-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Periodic Functions</title>
-
-    <exercise>
-      <webwork>
-        <setup>
-
-          <pg-code>
-
-          </pg-code>
-        </setup>
-        <statement>
-          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CKBXG9gF/width/425/height/429/border/888888" width="425px" height="429px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
-          <p>The graph shows a Ferris wheel, together with the height of a passenger as a function of time.</p>
-          <p><ol label="a">
-            <li><p>To start, the Ferris wheel has a radius of <m>10</m> feet, passengers board it from the ground (a height of <m>0</m> feet), and it takes <m>10</m> minutes to complete a rotation.</p>
-              <p>Use the bottom slider to increase the time, and two things will happen:
-              <ul>
-                <li><p>The passenger (shown by a red triangle) will move around the Ferris Wheel.</p></li>
-                <li><p>the passenger's height will be graphed as a function of time.</p></li>
-              </ul>
-            </p></li>
-            <li><p>Next, use the slider to change the radius to <m>30</m> feet. Move the time slider and notice the change made to the graph.</p></li>
-            <li><p>Next, use the slider to move the height of the boarding platform. Move the time slider and notice the change made to the graph.</p></li>
-            <li><p>Finally, use the slider to change the period of the Ferris Wheel so it completes a revolution every 20 seconds. Move the time slider and notice the change made to the graph.</p></li>
-          </ol></p>
-        </statement>
-        <hint>
-
-        </hint>
-        <solution>
-
-        </solution>
-      </webwork>
-    </exercise>
-
+    <section><title>Introduction to Periodic Functions</title>
+      <p>A function is called <term>periodic</term> if it repeats itself regularly. In this section, we will explore the basics of periodic functions by considering real-world examples.</p>
+      <exercise>
+        <webwork>
+          <setup>
+            <var name="$timeToCharge"><static>6</static></var>
+            <var name="$beginCharging">
+              <set>
+                <member>\text{?}</member>
+                <member>\text{12:00 A.M.}</member>
+                <member>\text{6:00 A.M.}</member>
+                <member>\text{12:00 P.M.}</member>
+                <member correct="yes">\text{6:00 P.M.}</member>
+              </set>
+            </var>
+            <var name="$period"><static>24</static></var>
+            <pg-code>
+              $timeToCharge=Real(6);
+              $beginCharging=PopUp(
+              ["?","12:00 A.M.","6:00 A.M.","12:00 P.M.","6:00 P.M."],"6:00 P.M."
+              );
+              $period=Real(24);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>The following graph shows the &#37; battery charge on a cell phone as a function of the number of hours after midnight.</p>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/P6hCb2sn/width/425/height/343/border/888888" width="425px" height="343px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p><ol label="a">
+              <li><p>How many hours does it take to charge the phone?</p>
+              <p>Answer:  <var name="$timeToCharge" width="10" /></p></li>
+              <li><p>What time does the user begin recharging the phone each day?</p>
+              <p>Answer:  <var name="$beginCharging" form="popup" /></p></li>
+              <li><p>This function is <em>periodic</em>, meaning that it repeats itself over and over.</p>
+              <p>How many hours does it take to repeat itself completely?</p>
+              <p>Answer:  <var name="$period" width="10" /></p></li>
+            </ol></p>
+          </statement>
+          <solution>
+            <p><ol label="a">
+              <li><p>It takes <m>6</m> hours to fully rechage the phone.</p></li>
+              <li><p>The user begins recharging the phone at <m>6:00</m> P.M. each day.</p></li>
+              <li><p>It takes <m>24</m> hours for this function to repeat itself.</p></li>
+            </ol></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <p>In the last exercise, the function repeated itself every <m>24</m> hours. This is called the <term>period</term> of the function <mdash /> the smallest value of the input, after which the function repeats itself again.
+      <fn>It is also true that the function repeats itself every <m>48</m> hours, but this isn't the smallest number for which it repeats. The period is defined as the smallest such number.</fn></p>
+      <p>The next exercise will become <em>the</em> fundamental example of a periodic function in this course. It involves a person riding a <url href="https://en.wikipedia.org/wiki/Ferris_wheel">Ferris Wheel</url>.</p>
+      <exercise>
+        <webwork>
+          <setup>
+            <var name="$transformation">
+              <set>
+                <member>f(3t)</member>
+                <member correct="yes">f\left(\frac{t}{3}\right)</member>
+                <member>3f(t)</member>
+                <member>\frac{1}{3}f(t)</member>
+              </set>
+            </var>
+            <pg-code>
+              $transformation=RadioButtons(
+              ["\(f(3t)\)","\(f\left(\frac{t}{3}\right)\)","\(3f(t)\)","\(\frac{1}{3}f(t)\)"],1
+              );
+            </pg-code>
+          </setup>
+          <statement>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CKBXG9gF/width/425/height/429/border/888888" width="425px" height="429px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>At bottom left is a diagram of the Ferris Wheel. Using the sliders at right, you can adjust things like the wheel's <em>radius</em>, the <em>height</em> of the loading platform, or the <em>period</em> of the wheel.</p>
+            <p><ol label="a">
+              <li><p>To start, the Ferris wheel has a radius of <m>10</m> meters, passengers board it from the ground (a height of <m>0</m> meters), and it takes <m>10</m> minutes to complete a rotation.</p>
+                <p>Use the bottom slider to increase the time, and two things will happen:
+                <ul>
+                  <li><p>The passenger (shown by a red triangle) will move around the Ferris Wheel.</p></li>
+                  <li><p>the passenger's height above the ground will be graphed as a function of time.</p></li>
+                </ul>
+              </p></li>
+              <li><p>Next, use the slider to change the radius to <m>30</m> meters. Move the time slider and notice the change made to the graph.</p></li>
+              <li><p>Next, use the slider to move the height of the boarding platform. Move the time slider and notice the change made to the graph.</p></li>
+              <li><p>Finally, use the slider to change the period of the Ferris Wheel so it completes a revolution every <m>20</m> minutes. Move the time slider and notice the change made to the graph.</p></li>
+            </ol></p>
+            <p>If the function is called <m>f(t)</m> when the period is <m>10</m> minutes, then changing the period to <m>30</m> minutes brings about a horizontal stretch to the graph.</p>
+            <p>Changing the period to <m>30</m> minutes is which transformation?</p>
+            <p>Answer:  <var name="$transformation" form="buttons" /></p>
+          </statement>
+          <hint>
+            <p>Recall <xref ref="note-horizontal-stretch-compress">Note</xref>.</p>
+          </hint>
+          <solution>
+            <p>The transformation is: <me>f\left(\frac{t}{3}\right)</me></p>
+          </solution>
+        </webwork>
+      </exercise>
+      <p>In the Ferris Wheel problem, there are a few other things to notice.</p>
+      <p>First, the height of the person as they go around the circle has nice symmetry <mdash /> the graph on the way <em>up</em> is a reflection of the graph on the way down.</p>
+      <p>Next, the graph oscillates up and down around a <q>middle height</q>. For periodic functions, this height is called the <term>midline</term>. For example, when the radius was <m>20</m> meters and the loading platform was <m>10</m> meters, the <term>midline</term> was the height <m>y = 30</m> meters.</p>
+      <p>In fact, the midline is usually given in equation form, such as: <m>y = b</m></p>
+      <p>Finally, the radius of the wheel is easily seen on the graph, as the distance between the midline and either the highest point, or the lowest point.</p>
+      <p>Because not every periodic function involves movement around a circle, we give this distance a more general term: The <term>Amplitude</term></p>
+      <p>In general, the <term>amplitude</term> of a periodic function is the difference (along the output axis) between the maximum output and <term>midline</term> (or between the midline and the minimum output).</p>
+      <exercise>
+        <webwork>
+          <setup>
+            <var name="$period"><static>4</static></var>
+            <var name="$amplitude"><static>2.5</static></var>
+            <var name="$midline"><static>-3.5</static></var>
+            <pg-code>
+              $period=Real(4);
+              $amplitude=Real(2.5);
+              $midline=Real(-3.5);
+            </pg-code>
+          </setup>
+          <statement>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/c9dm2AU4/width/425/height/373/border/888888" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>The graph above shows a periodic function. Use it to determine the values below.</p>
+            <p>Period = <var name="$period" width="10" /></p>
+            <p>Amplitude = <var name="$amplitude" width="10" /></p>
+            <p>Midline:  <m>y = </m><var name="$midline" width="10" /></p>
+          </statement>
+          <solution>
+            <p><ol>
+              <li><p>Period = <var name="$period" /></p></li>
+              <li><p>Amplitude = <var name="$amplitude" /></p></li>
+              <li><p>Midline:  <m>y = </m><var name="$midline" /></p></li>
+            </ol></p>
+          </solution>
+        </webwork>
+      </exercise>
+  </section>
 
 </chapter>

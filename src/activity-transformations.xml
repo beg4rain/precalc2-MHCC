@@ -167,12 +167,6 @@
           </ol></p>
 
         </statement>
-        <hint>
-
-        </hint>
-        <solution>
-
-        </solution>
       </webwork>
     </exercise>
     <p>Questions you should be able to answer:
@@ -376,9 +370,9 @@
     <p>We have already seen that the graph of a function may be stretched or compressed <em>vertically</em> by multiplying the output of the function by a constant number <m>a</m>.</p>
     <p><ul>
       <li><p>If <m>a&gt;1</m>, then graphing <m>y = af(x)</m> would be the result of stretching <m>y = f(x)</m> vertically, away from the <m>x</m><ndash />axis. All of the <m>y</m> values on the graph of <m>f(x)</m> would be multiplied by this number <m>a</m>, so they would now be larger in magnitude (either positive or negative). Thus, the points would be stretched <em>farther away</em> from the <m>x</m><ndash />axis.</p></li>
-      <li><p>If <m>0&lt;a&lt;1</m>, then the graph of <m>y = af(x)</m> would be like compressing the graph of <m>y = f(x)</m> vertically, toward the <m>x</m><ndash />axis. All of the <m>y</m> values on the graph of <m>f(x)</m> would be multiplied by the number <m>a</m>, so they would become smaller in magnitude. Thus, the points would be compressed toward the <m>x</m><ndash />axis.</p></li>
-      <li><p>Finally, we know that adding or subtracting a number from the input of a function will shift the graph either left or right.</p></li>
+      <li><p>If <m>0&lt;a&lt;1</m>, then the graph of <m>y = af(x)</m> would be like compressing the graph of <m>y = f(x)</m> vertically, toward the <m>x</m><ndash />axis. All of the <m>y</m> values on the graph of <m>f(x)</m> would be multiplied by the number <m>a</m>, so they would become smaller in magnitude. Thus, the points would be compressed <em>toward</em> the <m>x</m><ndash />axis.</p></li>
     </ul></p>
+    <p>Finally, we know that adding or subtracting a number from the input of a function will shift the graph either left or right.</p>
     <paragraphs><title>Horizontal Stretches and Compressions</title>
     <p>Now, we will complete the story by investigating how to stretch or compress a function <em>horizontally</em>.</p></paragraphs>
     <exercise>
@@ -595,20 +589,26 @@
           <p>[The function <m>f</m> is linear, and its pattern can be used to determine values of the table.]</p>
         </answer>
     </exercise>
+    <p>Notice that the output values for <m>f(x)</m>, which occur later in the table, now happen earlier for the transformation <m>f(2x)</m>. This makes sense graphically, as the points at certain heights now occur earlier, at smaller <m>x</m><ndash />values for <m>f(2x)</m>.</p>
     <note xml:id="note-horizontal-stretch-compress">
-      <p>It is useful to realize that the transformation <m>f(0.5x)</m> may be written as: <me>f\left(\frac{x}{2}\right)</me> So, any transformation of the type <m>f(ax)</m> may be rewritten in this way  <m>a</m> is a number larger than <m>1</m>.</p>
-      <p>Therefore, another way to thinking of this type of transformation is the following:
+      <p>It is useful to realize that the transformation <m>f(0.5x)</m> may be written as: <me>f\left(\frac{x}{2}\right)</me> Any transformation of the type <m>f(ax)</m> may be rewritten as <m>f\left(\dfrac{x}{\sfrac{1}{a}}\right)</m>, where one of the numbers, <m>a</m> or <m>\frac{1}{a}</m>, is greater than <m>1</m>.</p>
+      <p>Therefore, another way to remember what this type of transformation does is the following.</p>
+      <p>If you rewrite the transformation so that <m>a&gt;1</m>, then:
         <dl>
           <li><title><m>f(ax)</m></title>
           <p>Compresses the graph of <m>f</m> by a factor of <m>a</m></p></li>
+          <li><title></title>
+          <p><q>Multiplying by a number greater than <m>1</m> will compress the graph.</q></p></li>
           <li><title><m>f\big(\frac{x}{a}\big)</m></title>
           <p>Stretches the graph of <m>f</m> by a factor of <m>a</m></p></li>
+          <li><title></title>
+          <p><q>Dividing by a number greater than <m>1</m> will stretch the graph.</q></p></li>
         </dl></p>
     </note>
     <p>Often, we will want to horizontally stretch or compress a function by a certain factor. Or, if we already have a transformed function's graph, we may need to determine what the stretching/compressing factor was.</p>
     <example>
       <statement>
-        <p>The graphs below show <m>y = f(x)</m> and a horizontal stretch <m>y = f(ax)</m>.</p>
+        <p>The graphs at left shows <m>y = f(x)</m>. This graph was horizontally stretched to make the graph <m>y = g(x)</m> at right.</p>
         <sidebyside widths="48% 48%">
           <figure>
             <caption><m>y = f(x)</m></caption>
@@ -641,7 +641,7 @@
               </image>
           </figure>
           <figure>
-            <caption><m>y = f(ax)</m></caption>
+            <caption><m>y = g(x)</m></caption>
               <image>
                 <latex-image-code>
                   <![CDATA[
@@ -674,19 +674,18 @@
         <p>The objective here is to determine the value of <m>a</m>, which effected the horizontal <em>stretch</em> to the graph of <m>f</m>.</p>
         <p><ol>
           <li><p>Since this transformation stretches points away from the <m>x</m><ndash />axis, fix your attention on the point <m>(2, -4)</m> on the graph of <m>f(x)</m>.</p>
-          <p>Its corresponding point <m>(5, -4)</m> on the graph of <m>f(ax)</m> has been stretched by what factor away from the <m>x</m><ndash />axis?
+          <p>Its corresponding point <m>(5, -4)</m> on the graph of <m>g(x)</m> has been stretched by what factor away from the <m>x</m><ndash />axis?
           <fn>That is, how many times larger is the <m>x</m><ndash />value of the stretched point?</fn></p></li>
-          <li><p>Using the idea from <xref ref="note-horizontal-stretch-compress">Note</xref>, determine the value of <m>a</m> if the stretched graph is <m>f(ax)</m>.</p></li>
+          <li><p>Using the idea from <xref ref="note-horizontal-stretch-compress">Note</xref>, determine the value of <m>a</m> if the stretched graph is <m>f\left(\frac{x}{a}\right)</m>.</p></li>
         </ol></p>
       </statement>
       <solution>
-        <p>The points on <m>f(ax)</m> are <m>\frac{5}{2}=2.5</m> times as far from the <m>x</m><ndash />axis as those on the graph of <m>f(x)</m>.</p>
-        <p>Since the graph was <em>stretched</em>, then we know that <m>0&lt;a&lt;1</m>. So, <m>a = \frac{1}{2.5} = 0.4</m>, and the transformation is: <me>y = f\left(\frac{x}{0.4})</me></p>
+        <p>The points on <m>g(x)</m> are <m>\frac{5}{2}=2.5</m> times as far from the <m>x</m><ndash />axis as those on the graph of <m>f(x)</m>.</p>
+        <p>Since the graph was <em>stretched</em>, then we know that the transformation is <m>f\left(\frac{x}{a}\right)</m> where <m>a = 2.5</m>. So, the transformation could be written as either: <me>y = f\left(\frac{x}{2.5}\right)</me> Or <me>y = f\left(0.4x\right)</me></p>
       </solution>
     </example>
-    <p>Notice that the output values for <m>f(x)</m>, which occur later in the table, now happen earlier for the transformation <m>f(2x)</m>. This makes sense graphically, as the points at certain heights now occur earlier, at smaller <m>x</m><ndash />values for <m>f(2x)</m>.</p>
     <paragraphs><title>Stretching or Compressing a standard function</title>
-    <p>You are already familiar with several basic functions:</p>
+    <p>You are already familiar with many basic functions:</p>
     <p><table>
       <tabular>
         <col />
@@ -694,9 +693,44 @@
         <row><cell><m>y = x^2</m></cell></row>
         <row><cell><m>y = e^x</m></cell></row>
         <row><cell><m>y = log_{10}(x)</m></cell></row>
+        <row><cell><m>y = \frac{1}{x}</m></cell></row>
       </tabular>
     </table></p>
-    <p>If you know</p>
+    <p>If you know these basic shapes, you can create infinite variations by using appropriate transformations.</p>
+    <p>In the next exercise, you will be given a function and its formula. Then use what you know about transformations in order to choose the correct formula for the transformed graph.</p>
+    <exercise>
+      <webwork>
+        <setup>
+          <var name="$formula">
+            <set>
+              <member>2log_2(x-4)</member>
+              <member>\frac{1}{2}log_2(x-4)</member>
+              <member correct="yes">log_2(2x-4)</member>
+              <member>log_2\left(\frac{1}{2}x-4\right)</member>
+            </set>
+          </var>
+          <pg-code>
+            $formula=RadioButtons(
+            ["\(2log_2(x-4)\)","\(\frac{1}{2}log_2(x-4)\)","\(log_2(2x-4)\)","\(log_2\left(\frac{x}{2}-4\right)\)"],2
+            );
+          </pg-code>
+        </setup>
+        <statement>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/hkbdwXA3/width/425/height/373/border/888888" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p>The graph above shows <m>f(x) = \log_{2}(x-4)</m>.</p>
+          <p>Below is <m>g(x)</m>, which is a horizontal compression of <m>f</m>.</p>
+          <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/Pbu8g3NG/width/425/height/373/border/888888" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+          <p> Determine the factor by which <m>f</m> was compressed, and then choose the correct formula for this new graph.</p>
+          <p>Answer:  <m>y = </m><var name="$formula" form="buttons" /></p>
+        </statement>
+        <hint>
+          <p>Remember that horizontally compressing (or stretching) happens by multiplying (or dividing) the input <m>x</m> by a number.</p>
+        </hint>
+        <solution>
+          <p>Since the graph is compressed to half its original width, we must <em>multiply</em> the input <m>x</m> by a number greater than <m>1</m> <mdash /> in this case, that number is <m>2</m>.</p>
+        </solution>
+      </webwork>
+    </exercise>
     </paragraphs>
 
   </section>
