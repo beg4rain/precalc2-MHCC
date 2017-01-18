@@ -141,6 +141,146 @@
           </solution>
         </webwork>
       </exercise>
+      <p>In the next exercise, you'll plot points on the graph of a periodic function.</p>
+      <note>
+        <p>As we see examples of periodic functions which describe motion around a circle (such as a Ferris Wheel), we often use the language of analog clocks to describe certain positions on the circle.</p>
+        <p>For example, if a person begins at the bottom of the circle, we may refer to this as the <m>6</m> <em>O'clock</em> position.</p>
+        <p>For reference, our naming of points on a circle will be as follows:</p>
+        <figure>
+          <caption></caption>
+            <image>
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}[line cap=rect,line width=3pt]
+\filldraw [fill=cyan] (0,0) circle [radius=2cm];
+\foreach \angle [count=\xi] in {60,30,...,-270}
+{
+  \draw[line width=1pt] (\angle:1.8cm) -- (\angle:2cm);
+  \node[font=\large] at (\angle:1.36cm) {\textsf{\xi}};
+}
+\foreach \angle in {0,90,180,270}
+  \draw[line width=2pt] (\angle:1.6cm) -- (\angle:2cm);
+\draw (0,0) -- (120:0.8cm);
+\draw (0,0) -- (90:1cm);
+\end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+        </figure>
+        <p>Of course, a position like <m>3</m> <em>O'clock</em> would be relative to which <em>side</em> of the circle was being observed, but nonetheless we will use these names.</p>
+      </note>
+      <exercise>
+        <webwork>
+          <setup>
+            <var name="$midline"><static>y=10</static></var>
+            <var name="$amplitude"><static>25</static></var>
+            <var name="$period"><static>20</static></var>
+            <var name="$h[0]"><static>10</static></var>
+            <var name="$h[1]"><static>40</static></var>
+            <var name="$h[2]"><static>70</static></var>
+            <var name="$h[3]"><static>40</static></var>
+            <var name="$h[4]"><static>10</static></var>
+            <var name="$diditgraph">
+              <set>
+                <member>\text{?}</member>
+                <member correct="yes">\text{yes}</member>
+                <member>\text{no}</member>
+              </set>
+            </var>
+            <pg-code>
+              $amplitude=Real(30);
+              $period=Real(20);
+              $h[0]=Real(10);
+              $h[1]=Real(40);
+              $h[2]=Real(70);
+              $h[3]=Real(40);
+              $h[4]=Real(10);
+              $diditgraph=PopUp(
+              ["?","yes","no"],"yes"
+              );
+              Context()->variables->are(y=>'Real');
+              parser::Assignment->Allow;
+              $midline=Formula("y=40");
+            </pg-code>
+          </setup>
+          <statement>
+            <p>A person rides a Ferris Wheel, boarding it at a height of <m>10</m> feet at the <m>6</m> <em>O'clock</em> position. The wheel has a <em>diameter</em> of <m>60</m> feet, and it completes a revolution every 20 minutes.</p>
+            <p>Let <m>f(t)</m> represent the person's height (in feet) above the ground, as a function of <m>t</m>, the number of minutes they've been riding.</p>
+            <p>Complete the table of values below for the function <m>f</m>.</p>
+            <table>
+            <tabular top="major" halign="center">
+              <col halign="left" />
+              <col />
+              <row bottom="medium">
+                <cell><m>t</m></cell>
+                <cell><m>f(t)</m></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>0</m></cell>
+                <cell><var name="$h[0]" width="10" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>5</m></cell>
+                <cell><var name="$h[1]" width="10" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>10</m></cell>
+                <cell><var name="$h[2]" width="10" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>15</m></cell>
+                <cell><var name="$h[3]" width="10" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>20</m></cell>
+                <cell><var name="$h[4]" width="10" /></cell>
+              </row>
+            </tabular>
+          </table>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/tm9RnWCc/width/425/height/373/border/888888/sri/true" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>In the graph above, move the free points to the locations you determined in your table above. If the points are placed correctly, the graph of <m>y = f(t)</m> will appear.</p>
+            <p>Did the graph appear? <var name="$diditgraph" form="popup" /></p>
+            <p>What is the amplitude of the function?</p>
+            <p>Answer:  <var name="$amplitude" width="5" /> feet</p>
+            <p>What is the period of the function?</p>
+            <p>Answer:  <var name="$period" width="5" /> minutes</p>
+            <p>What is the equation of the midline?</p>
+            <p>Answer:  <var name="$midline" width="10" /></p>
+          </statement>
+          <solution>
+            <table>
+            <tabular top="major" halign="center">
+              <col halign="left" />
+              <col />
+              <row bottom="medium">
+                <cell><m>t</m></cell>
+                <cell><m>f(t)</m></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>0</m></cell>
+                <cell><var name="$h[0]" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>5</m></cell>
+                <cell><var name="$h[1]" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>10</m></cell>
+                <cell><var name="$h[2]" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>15</m></cell>
+                <cell><var name="$h[3]" /></cell>
+              </row>
+              <row bottom="medium">
+                <cell><m>20</m></cell>
+                <cell><var name="$h[4]" /></cell>
+              </row>
+            </tabular>
+          </table>
+          </solution>
+        </webwork>
+      </exercise>
   </section>
 
 </chapter>

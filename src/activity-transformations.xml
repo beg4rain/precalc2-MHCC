@@ -591,51 +591,36 @@
     </exercise>
     <p>Notice that the output values for <m>f(x)</m>, which occur later in the table, now happen earlier for the transformation <m>f(2x)</m>. This makes sense graphically, as the points at certain heights now occur earlier, at smaller <m>x</m><ndash />values for <m>f(2x)</m>.</p>
     <note xml:id="note-horizontal-stretch-compress">
-      <p>It is useful to realize that the transformation <m>f(0.5x)</m> may be written as: <me>f\left(\frac{x}{2}\right)</me> Any transformation of the type <m>f(ax)</m> may be rewritten as <m>f\left(\dfrac{x}{\sfrac{1}{a}}\right)</m>, where one of the numbers, <m>a</m> or <m>\frac{1}{a}</m>, is greater than <m>1</m>.</p>
+      <p>It is useful to realize that a transformation like <m>f(0.25x)</m> may be written as: <me>f\left(\frac{x}{4}\right)</me> Any transformation of the type <m>f(ax)</m> may be rewritten as <m>f\left(\dfrac{x}{\sfrac{1}{a}}\right)</m>, where one of the numbers, <m>a</m> or <m>\frac{1}{a}</m>, is greater than <m>1</m>.</p>
       <p>Therefore, another way to remember what this type of transformation does is the following.</p>
       <p>If you rewrite the transformation so that <m>a&gt;1</m>, then:
         <dl>
           <li><title><m>f(ax)</m></title>
           <p>Compresses the graph of <m>f</m> by a factor of <m>a</m></p></li>
           <li><title></title>
-          <p><q>Multiplying by a number greater than <m>1</m> will compress the graph.</q></p></li>
+          <p><q>Multiplying the input variable by a number greater than <m>1</m> will compress the graph.</q></p></li>
           <li><title><m>f\big(\frac{x}{a}\big)</m></title>
           <p>Stretches the graph of <m>f</m> by a factor of <m>a</m></p></li>
           <li><title></title>
-          <p><q>Dividing by a number greater than <m>1</m> will stretch the graph.</q></p></li>
+          <p><q>Dividing the input variable by a number greater than <m>1</m> will stretch the graph.</q></p></li>
         </dl></p>
     </note>
     <p>Often, we will want to horizontally stretch or compress a function by a certain factor. Or, if we already have a transformed function's graph, we may need to determine what the stretching/compressing factor was.</p>
     <example>
       <statement>
-        <p>The graphs at left shows <m>y = f(x)</m>. This graph was horizontally stretched to make the graph <m>y = g(x)</m> at right.</p>
+        <p>The graph at left shows <m>y = f(x)</m>. This graph was horizontally stretched to make the graph <m>y = g(x)</m> at right.</p>
         <sidebyside widths="48% 48%">
           <figure>
             <caption><m>y = f(x)</m></caption>
               <image>
                 <latex-image-code>
                   <![CDATA[
-                  \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
-\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,thick, xstep=1.0cm,ystep=1.0cm] (-6.543262411347523,-5.870234886407389) grid (5.8448328267477185,4.501193685021175);
-\draw[->,ultra thick,color=black] (-6.543262411347523,0.) -- (5.8448328267477185,0.);
-\foreach \x in {-6.,-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[color=black] (5.376252392209836,0.11182133230650743) node [anchor=south west] { x};
-\draw[->,ultra thick,color=black] (0.,-5.870234886407389) -- (0.,4.501193685021175);
-\foreach \y in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0.14643138579308795,3.8861763573353842) node [anchor=west] { y};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-6.543262411347523,-5.870234886407389) rectangle (5.8448328267477185,4.501193685021175);
-\draw[line width=2.8pt,color=qqwuqq,smooth,samples=100,domain=-6.543262411347523:5.8448328267477185] plot(\x,{0.125*((\x)+4.0)*(\x)*((\x)-4.0)-1.0});
-\begin{scriptsize}
-\draw [fill=uuuuuu] (-2.,2.) circle (4pt);
-\draw [fill=uuuuuu] (2.,-4.) circle (4pt);
-\end{scriptsize}
-\end{tikzpicture}
+                  \begin{tikzpicture}
+                                \begin{axis}[]
+                                \addplot+[smooth,domain=-2:3] {(x-2)*x*(x+1)};
+                                \addplot[soldot] (2,0);
+                                \end{axis}
+                            \end{tikzpicture}
                   ]]>
                 </latex-image-code>
               </image>
@@ -645,27 +630,12 @@
               <image>
                 <latex-image-code>
                   <![CDATA[
-                  \definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-                  \definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
-                  \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
-                  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-                  \draw [color=cqcqcq,thick, xstep=1.0cm,ystep=1.0cm] (-8.314496453900716,-6.909334616865609) grid (6.675098784194524,5.6400939545629525);
-                  \draw[->,ultra thick,color=black] (-8.314496453900716,0.) -- (6.675098784194524,0.);
-                  \foreach \x in {-8.,-7.,-6.,-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.,6.}
-                  \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-                  \draw[color=black] (6.108116458403687,0.13530381209087397) node [anchor=south west] { x};
-                  \draw[->,ultra thick,color=black] (0.,-6.909334616865609) -- (0.,5.6400939545629525);
-                  \foreach \y in {-6.,-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
-                  \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-                  \draw[color=black] (0.1771819768096364,4.895922988063146) node [anchor=west] { y};
-                  \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-                  \clip(-8.314496453900716,-6.909334616865609) rectangle (6.675098784194524,5.6400939545629525);
-                  \draw[line width=3.1pt,color=qqwuqq,smooth,samples=100,domain=-8.314496453900716:6.675098784194524] plot(\x,{0.125*(0.4*(\x)+4.0)*0.4*(\x)*(0.4*(\x)-4.0)-1.0});
-                  \begin{scriptsize}
-                  \draw [fill=uuuuuu] (5.,-4.) circle (4.5pt);
-                  \draw [fill=uuuuuu] (-5.,2.) circle (4.5pt);
-                  \end{scriptsize}
-                  \end{tikzpicture}
+                  \begin{tikzpicture}
+                                \begin{axis}[]
+                                \addplot+[smooth,domain=-5:6.5] {(0.4*x-2)*0.4*x*(0.4*x+1)};
+                                \addplot[soldot] (5,0);
+                                \end{axis}
+                            \end{tikzpicture}
                   ]]>
                 </latex-image-code>
               </image>
@@ -673,8 +643,8 @@
         </sidebyside>
         <p>The objective here is to determine the value of <m>a</m>, which effected the horizontal <em>stretch</em> to the graph of <m>f</m>.</p>
         <p><ol>
-          <li><p>Since this transformation stretches points away from the <m>x</m><ndash />axis, fix your attention on the point <m>(2, -4)</m> on the graph of <m>f(x)</m>.</p>
-          <p>Its corresponding point <m>(5, -4)</m> on the graph of <m>g(x)</m> has been stretched by what factor away from the <m>x</m><ndash />axis?
+          <li><p>Since this transformation stretches points away from the <m>x</m><ndash />axis, fix your attention on the point <m>(2, 0)</m> on the graph of <m>f</m>.</p>
+          <p>Its corresponding point <m>(5, 0)</m> on the graph of <m>g</m> has been stretched by what factor away from the <m>x</m><ndash />axis?
           <fn>That is, how many times larger is the <m>x</m><ndash />value of the stretched point?</fn></p></li>
           <li><p>Using the idea from <xref ref="note-horizontal-stretch-compress">Note</xref>, determine the value of <m>a</m> if the stretched graph is <m>f\left(\frac{x}{a}\right)</m>.</p></li>
         </ol></p>
@@ -702,16 +672,63 @@
       <webwork>
         <setup>
           <var name="$formula">
+            <static>1/(0.625x)</static>
+          </var>
+          <pg-code>
+            $gr=init_graph(-1,-1,10,2,
+            axes=>[0,0],
+            grid=>[11,3],
+            size=>[400,400]
+            );
+            $gr1=init_graph(-1,-1,10,2,
+            axes=>[0,0],
+            grid=>[11,3],
+            size=>[400,400]
+            );
+            add_functions($gr, "1/x for x in &lt;0.1,10&gt; using color:red and weight:2");
+            $gr->lb(new Label ( 8,0.15,'(8,0.125)','red','left','bottom'));
+            $gr->stamps( closed_circle(8,0.125,'blue'));
+            add_functions($gr1, "1/(1.625*x) for x in &lt;0.1,10&gt; using color:red and weight:2");
+            $gr1->lb(new Label ( 5,0.15,'(5,0.125)','red','left','bottom'));
+            $gr1->stamps( closed_circle(5,0.125,'blue'));
+            $formula=Compute("1/(0.625*x)");
+          </pg-code>
+        </setup>
+        <statement>
+          <figure>
+            <image pg-name="$gr" />
+          </figure>
+          <p>Above is the function <m>f(x) = \frac{1}{x}</m>.</p>
+          <p>Below, the graph shows a horizontal compression of <m>f</m>.</p>
+          <figure>
+            <image pg-name="$gr1" />
+          </figure>
+          <p>Use what you know about compressions in order to write the formula for <m>g(x)</m>.</p>
+          <p>Answer:  <m>y = </m><var name="$formula" width="15" /></p>
+        </statement>
+        <hint>
+          <p>Notice the point on the graph of <m>f</m> and the corresponding point on the compressed graph <m>y = g(x)</m>.</p>
+          <p>By what factor was it compressed toward the <m>y</m><ndash />axis?</p>
+        </hint>
+        <solution>
+          <p>The <m>x</m><ndash />coordinate of the point was multiplied by <m>\frac{5}{8} = 0.625</m> in order to make the compressed graph, so the formula is: <me>g(x) = \frac{1}{0.625x}</me></p>
+        </solution>
+      </webwork>
+    </exercise>
+    <exercise>
+      <webwork>
+        <setup>
+          <var name="$formula">
             <set>
-              <member>2log_2(x-4)</member>
-              <member>\frac{1}{2}log_2(x-4)</member>
-              <member correct="yes">log_2(2x-4)</member>
-              <member>log_2\left(\frac{1}{2}x-4\right)</member>
+              <member>2\log_2(x-4)</member>
+              <member>\frac{1}{2}\log_2(x-4)</member>
+              <member correct="yes">\log_2(2x-4)</member>
+              <member>\log_2\left(\frac{1}{2}x-4\right)</member>
             </set>
           </var>
           <pg-code>
             $formula=RadioButtons(
-            ["\(2log_2(x-4)\)","\(\frac{1}{2}log_2(x-4)\)","\(log_2(2x-4)\)","\(log_2\left(\frac{x}{2}-4\right)\)"],2
+            ["\(2\log_2(x-4)\)","\(\frac{1}{2}\log_2(x-4)\)","\(\log_2(2x-4)\)","\(\log_2\left(\frac{x}{2}-4\right)\)"],2
             );
           </pg-code>
         </setup>
