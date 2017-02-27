@@ -39,7 +39,7 @@
           </setup>
           <statement>
             <p>The following graph shows the &#37; battery charge on a cell phone as a function of the number of hours after midnight.</p>
-            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/P6hCb2sn/width/425/height/343/border/888888" width="425px" height="343px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/P6hCb2sn/width/425/height/343/border/888888/sri/true/sdz/false/" width="425px" height="343px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
             <p><ol label="a">
               <li><p>How many hours does it take to charge the phone?</p>
               <p>Answer:  <var name="$timeToCharge" width="10" /></p></li>
@@ -80,7 +80,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CKBXG9gF/width/425/height/429/border/888888" width="425px" height="429px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CKBXG9gF/width/425/height/429/border/888888/sri/true/sdz/false/" width="425px" height="429px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
             <p>At bottom left is a diagram of the Ferris Wheel. Using the sliders at right, you can adjust things like the wheel's <em>radius</em>, the <em>height</em> of the loading platform, or the <em>period</em> of the wheel.</p>
             <p><ol label="a">
               <li><p>To start, the Ferris wheel has a radius of <m>10</m> meters, passengers board it from the ground (a height of <m>0</m> meters), and it takes <m>10</m> minutes to complete a rotation.</p>
@@ -126,7 +126,7 @@
             </pg-code>
           </setup>
           <statement>
-            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/c9dm2AU4/width/425/height/373/border/888888" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/c9dm2AU4/width/425/height/373/border/888888/sri/true/sdz/false/" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
             <p>The graph above shows a periodic function. Use it to determine the values below.</p>
             <p>Period = <var name="$period" width="10" /></p>
             <p>Amplitude = <var name="$amplitude" width="10" /></p>
@@ -152,17 +152,17 @@
               <latex-image-code>
                 <![CDATA[
                 \begin{tikzpicture}[line cap=rect,line width=3pt]
-\filldraw [fill=cyan] (0,0) circle [radius=2cm];
-\foreach \angle [count=\xi] in {60,30,...,-270}
-{
-  \draw[line width=1pt] (\angle:1.8cm) -- (\angle:2cm);
-  \node[font=\large] at (\angle:1.36cm) {\textsf{\xi}};
-}
-\foreach \angle in {0,90,180,270}
-  \draw[line width=2pt] (\angle:1.6cm) -- (\angle:2cm);
-\draw (0,0) -- (120:0.8cm);
-\draw (0,0) -- (90:1cm);
-\end{tikzpicture}
+                \filldraw [fill=cyan] (0,0) circle [radius=2cm];
+                \foreach \angle [count=\xi] in {60,30,...,-270}
+                  {
+                  \draw[line width=1pt] (\angle:1.8cm) -- (\angle:2cm);
+                  \node[font=\large] at (\angle:1.36cm) {\textsf{\xi}};
+                  }
+                \foreach \angle in {0,90,180,270}
+                \draw[line width=2pt] (\angle:1.6cm) -- (\angle:2cm);
+                \draw (0,0) -- (120:0.8cm);
+                \draw (0,0) -- (90:1cm);
+                \end{tikzpicture}
                 ]]>
               </latex-image-code>
             </image>
@@ -237,7 +237,7 @@
               </row>
             </tabular>
           </table>
-            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/tm9RnWCc/width/425/height/373/border/888888/sri/true" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
+            <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/tm9RnWCc/width/425/height/373/border/888888/sri/true/sdz/false/" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
             <p>In the graph above, move the free points to the locations you determined in your table above. If the points are placed correctly, the graph of <m>y = f(t)</m> will appear.</p>
             <p>Did the graph appear? <var name="$diditgraph" form="popup" /></p>
             <p>What is the amplitude of the function?</p>
