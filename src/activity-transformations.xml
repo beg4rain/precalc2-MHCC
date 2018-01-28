@@ -21,7 +21,7 @@
         <li><p>Vertical Stretches and Compressions</p></li>
       </ul>
     </p>
-    <p>In this first exercise, you will encounter your first of many <em>WeBWorK</em> problems. Click to open the <em>WeBWorK</em> environment, and you will see a graph which can be manipulated. Answer the questions that follow, and click to submit your responses.</p>
+    <p>In the first exercise below, you will encounter your first of many <em>WeBWorK</em> problems. Click to open the <em>WeBWorK</em> exercise, and you will see a graph that you can manipulate. Answer the questions that follow, and click to submit your answers.</p>
     <exercise>
       <webwork>
         <setup>
@@ -179,6 +179,8 @@
     <exercise>
       <webwork>
         <setup>
+          <var name="$shift[0]"><static>0</static></var>
+          <var name="$shift[1]"><static>1</static></var>
           <var name="$grans1">
             <static>(x-3)^2 + 4</static>
           </var>
@@ -239,6 +241,16 @@
     <exercise>
       <webwork>
         <setup>
+          <var name="$ans">
+            <set>
+              <member>\text{Graph 1}</member>
+              <member>\text{Graph 2}</member>
+              <member correct="yes">\text{Graph 3}</member>
+              <member>\text{Graph 4}</member>
+            </set>
+          </var>
+          <var name="$shift[0]"><static>0</static></var>
+          <var name="$shift[1]"><static>1</static></var>
           <pg-code>
             @shift=map{$_+1}NchooseK(2,2);
             for my $i(0..4){$gr[$i] = init_graph(-5,-5,5,5,axes=>[0,0],grid=>[10,10],size=>[200,200]);};
@@ -256,12 +268,12 @@
         </setup>
         <statement>
           <p>The function <m>y = f(x)</m> is shown below.</p>
-          <figure><image pg-name="$gr[0]" width="200" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[0]" width="50%" height="200" tex_size="200"/></figure>
           <p>Which of the following graphs shows <m>y = f(x + <var name="$shift[0]" />) + <var name="$shift[1]" /></m>?</p>
-          <figure><image pg-name="$gr[1]" width="200" height="200" tex_size="200"/></figure>
-          <figure><image pg-name="$gr[2]" width="200" height="200" tex_size="200"/></figure>
-          <figure><image pg-name="$gr[3]" width="200" height="200" tex_size="200"/></figure>
-          <figure><image pg-name="$gr[4]" width="200" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[1]" width="60%" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[2]" width="60%" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[3]" width="60%" height="200" tex_size="200"/></figure>
+          <figure><image pg-name="$gr[4]" width="60%" height="200" tex_size="200"/></figure>
           <p>Answer:  <var name="$ans" form="popup" /></p>
         </statement>
         <solution>
@@ -392,6 +404,7 @@
               <member correct="yes">\text{the y-intercept}</member>
             </set>
           </var>
+          <var name="$f2"><static>f(2x)</static></var>
           <pg-code>
             $answer=PopUp(
             ["?","yes","no"],"yes"
@@ -408,7 +421,7 @@
           <p>Also shown are four free points for you to click and drag to other locations.</p>
           <p>[@MODES(HTML=&gt;'&lt;iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/V52gqJSs/width/425/height/373/border/888888/sri/true/sdz/false/" width="425px" height="373px" style="border:0px;"&gt; &lt;/iframe&gt;', TeX =&gt;"A GeoGebra applet.");@]*</p>
           <p>Suppose we wanted to <em>compress</em> the graph of <m>f</m> <em>horizontally</em> toward the <m>y</m><ndash />axis, so that each point on the curve was exactly <em>half</em> its current distance from the <m>y</m><ndash />axis.</p>
-          <p>Move the four free points to show where the fixed points would be if they were compressed toward the <m>y</m><ndash />axis.</p>
+          <p>Move the four free points to show where the fixed points would be if they were compressed toward the <m>y</m><ndash />axis. If you place them correctly, a complete, compressed graph will appear.</p>
           <p>Did you correctly place the points?</p>
           <p>Answer:  <var name="$answer" form="popup" /></p>
           <p>[If you move the points to their correct locations, the complete compressed graph would be displayed.]</p>
@@ -598,22 +611,22 @@
           <li><title><m>f(ax)</m></title>
           <p>Compresses the graph of <m>f</m> by a factor of <m>a</m></p></li>
           <li><title></title>
-          <p><q>Multiplying the input variable by a number greater than <m>1</m> will compress the graph.</q></p></li>
+          <p><q>Multiplying the input variable by a number greater than <m>1</m> will compress the graph.</q></p>
+          <p>Example:  <m>f(3x)</m> is only <m>1/3</m> as wide as <m>f(x)</m>.</p></li>
           <li><title><m>f\big(\frac{x}{a}\big)</m></title>
-          <p>Stretches the graph of <m>f</m> by a factor of <m>a</m></p></li>
-          <li><title></title>
-          <p><q>Dividing the input variable by a number greater than <m>1</m> will stretch the graph.</q></p></li>
+          <p>Stretches the graph of <m>f</m> by a factor of <m>a</m></p>
+          <p>Example?  <m>f\left(\frac{x}{4}\right)</m> is <m>4</m> times as wide as <m>f(x)</m>.</p></li>
         </dl></p>
     </note>
     <p>Often, we will want to horizontally stretch or compress a function by a certain factor. Or, if we already have a transformed function's graph, we may need to determine what the stretching/compressing factor was.</p>
     <example>
       <statement>
-        <p>The graph at left shows <m>y = f(x)</m>. This graph was horizontally stretched to make the graph <m>y = g(x)</m> at right.</p>
+        <p>The graph at left shows <m>y = f(x)</m>. This graph was horizontally stretched to make the graph <m>y = f(ax)</m> at right.</p>
         <sidebyside widths="48% 48%">
           <figure>
             <caption><m>y = f(x)</m></caption>
               <image>
-                <latex-image-code>
+                <latex-image>
                   <![CDATA[
                   \begin{tikzpicture}
                                 \begin{axis}[]
@@ -622,13 +635,13 @@
                                 \end{axis}
                             \end{tikzpicture}
                   ]]>
-                </latex-image-code>
+                </latex-image>
               </image>
           </figure>
           <figure>
             <caption><m>y = g(x)</m></caption>
               <image>
-                <latex-image-code>
+                <latex-image>
                   <![CDATA[
                   \begin{tikzpicture}
                                 \begin{axis}[]
@@ -637,11 +650,11 @@
                                 \end{axis}
                             \end{tikzpicture}
                   ]]>
-                </latex-image-code>
+                </latex-image>
               </image>
           </figure>
         </sidebyside>
-        <p>The objective here is to determine the value of <m>a</m>, which effected the horizontal <em>stretch</em> to the graph of <m>f</m>.</p>
+        <p>The objective is to find what value of <m>a</m> caused the horizontal <em>stretch</em> to the graph of <m>f</m>.</p>
         <p><ol>
           <li><p>Since this transformation stretches points away from the <m>x</m><ndash />axis, fix your attention on the point <m>(2, 0)</m> on the graph of <m>f</m>.</p>
           <p>Its corresponding point <m>(5, 0)</m> on the graph of <m>g</m> has been stretched by what factor away from the <m>x</m><ndash />axis?
@@ -750,8 +763,7 @@
     </exercise>
     </paragraphs>
 
-  </section>
-</chapter>
+
 
 <!--
 <exercise>
@@ -760,13 +772,8 @@
             <webwork>
 
                 <setup>
-                    <var name="$answer" category="number">
-                        <static>3</static>
-                    </var>
-                    <var name="$second_x" category="number">
-                        <static>3.8</static>
-                    </var>
-
+                    <var name="$answer" category="number"><static>3</static></var>
+                    <var name="$second_x" category="number"><static>3.8</static></var>
                     <pg-code>
                         $answer = random(1,3,1);
                         $gr = init_graph(-1,-1,4,4,
@@ -786,34 +793,28 @@
                         $solgr->moveTo(0,1);
                         $solgr->lineTo($answer,1,'black',3);
                         $solgr->arrowTo($answer,0,'black',3);
-
                     </pg-code>
                 </setup>
-
                 <statement>
                     <p>The graph below is a graph of <m>y=f(x)</m>. Use the graph to solve the equation <m>f(x)=1</m>.</p>
-
                     <figure>
                         <image pg-name="$gr">
                             <description>a plot of a curve on a cartesian set of axes; the x axis ranges from -1 to 4, and the y-axis ranges from -1 to 4; the curve enters from the left, below the x-axis, and curves upward and to the right until it reaches the point (0,0); from here it continues predominantly rightward for a bit, bending slightly upward more and more as it progresses; it passes through the points (<var name="$answer"/>,1) and (<var name="$second_x"/>,2) before leaving the graph moving more and more upward and to the right.</description>
                         </image>
                     </figure>
-
-                    <p><m>x=</m> <var name="$answer" width="5"/></p>
+                    <p><m>x=</m> <var name="$answer" width="10"/></p>
                 </statement>
-
                 <solution>
-
                     <p>The graph reveals that the only solution to <m>f(x)=1</m> is <m>x=<var name="$answer"/></m>.</p>
-
                     <figure>
                         <image pg-name="$solgr">
-                            <description>a plot of a curve on a cartesian set of axes; the x axis ranges from -1 to 4, and the y-axis ranges from -1 to 4; the curve enters from the left, below the x-axis, and curves upward and to the right until it reaches the point (0,0); from here it continues predominantly rightward for a bit, bending slightly upward more and more as it progresses; it passes through the points ($answer,1) and ($second_x,2) before leaving the graph moving more and more upward and to the right; a horizontal line segment moves rightward from y=1 on the y-axis until it reaches a point on the curve; a vertical line segment moves down from this point to x=$answer on the x-axis.</description>
+                            <description>a plot of a curve on a cartesian set of axes; the x axis ranges from -1 to 4, and the y-axis ranges from -1 to 4; the curve enters from the left, below the x-axis, and curves upward and to the right until it reaches the point (0,0); from here it continues predominantly rightward for a bit, bending slightly upward more and more as it progresses; it passes through the points (<var name="$answer" />,1) and (<var name="$second_x" />,2) before leaving the graph moving more and more upward and to the right; a horizontal line segment moves rightward from y=1 on the y-axis until it reaches a point on the curve; a vertical line segment moves down from this point to x=$answer on the x-axis.</description>
                         </image>
                     </figure>
-
                 </solution>
-
             </webwork>
         </exercise>
--->
+      -->
+
+      </section>
+    </chapter>

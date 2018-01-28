@@ -16,13 +16,9 @@
     <xi:include href="./bookinfo.xml" /> <!-- ISBN, website, other metadata -->
 
     <book xml:id="precalc2-MHCC">
-        <title>Mt. Hood Precalculus</title>
+        <title>Precalculus: An Active Reading Approach</title>
         <subtitle>Elementary Functions 2</subtitle>
       <introduction>
-        <p>Here are some activities for Math 112, organized by week.</p>
-        <p>Use the navigation bar on the left to search for the current week's activities.</p>
-        <p>The purpose of these activities is to have you explore a topic, either as <em>review</em> or to see it for the first time.</p>
-        <p>As you work through an activity, you should take notes <mdash /> either by writing out the problems, or just keeping track of the big ideas.</p>
       </introduction>
         <xi:include href="./frontmatter.xml" />                <!-- Title Page, Preface, etc. -->
 

@@ -22,6 +22,13 @@
             <email>nickolas.chura@mhcc.edu</email>
         </author>
 
+        <author>
+            <personname>Jack Green</personname>
+            <department>Department of Mathematics</department>
+            <institution>Mt. Hood Community College</institution>
+            <email>jack.green@mhcc.edu</email>
+        </author>
+
         <date><today /></date>
 
     </titlepage>
@@ -30,7 +37,7 @@
 
         <copyright>
             <year>2010<ndash />2017</year>
-            <holder>Nick Chura</holder>
+            <holder>Nick Chura, Jack Green</holder>
             <!--<minilicense>GFDL License</minilicense>
             <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license is included in the appendix entitled <q>GNU Free Documentation License.</q>  All trademarks<trademark /> are the registered<registered /> marks of their respective owners.</shortlicense>-->
         </copyright>
